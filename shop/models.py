@@ -1,5 +1,6 @@
 from django.db import models
 from users.models import User
+
 # Create your models here.
 class RootCategory(models.Model):
     name = models.CharField(max_length=255)
@@ -15,6 +16,7 @@ class SubCategory(models.Model):
     def __str__(self):
         return self.name
 
+
 class Category(models.Model):
     name = models.CharField(max_length=255)
     sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
@@ -22,6 +24,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
     
+
 class Color(models.Model):
     name = models.CharField(max_length=110)
 
@@ -34,6 +37,7 @@ class Size(models.Model):
 
     def __str__(self):
         return self.name        
+
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
