@@ -107,5 +107,5 @@ class ProductList(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     filter_backends = (filters.DjangoFilterBackend,)
-    filterset_class = ProductFilter
+    # filterset_class = ProductFilter
     filterset_fields = "__all__"    

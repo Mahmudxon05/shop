@@ -34,11 +34,3 @@ def log_in(request):
 def log_out(request):
     logout(request)
     return  Response('logout')
-
-
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def product(request):
-    products = Product.objects.all()
-    ser = ProductSerializer(products, many=True)
-    return Response(ser.data)
